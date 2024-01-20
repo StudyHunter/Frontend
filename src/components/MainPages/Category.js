@@ -17,10 +17,12 @@ const Category = ({ onClick, categoryList }) => {
 export default Category;
 
 const CategoryContent = styled.button`
-  padding: 15px;
+  padding: 20px;
   margin: 3px;
   border-radius: 8px;
   color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
   ${(props) => {
     if (!props.value) {
       return `
