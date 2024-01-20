@@ -58,20 +58,22 @@ const Main = () => {
 export default Main;
 
 const MainBox = styled.div`
-  height: 100%;
   display: flex;
+  flex-basis: 100%;
   flex-direction: column;
 `;
 
 const UpperBox = styled.div`
   display: flex;
+  flex-basis: 10%;
   justify-content: space-around;
+  align-items: center;
 `;
 
 const LowerBox = styled.div`
-  padding: 10px;
+  padding: 0 10px 10px 10px;
   display: flex;
-  flex-basis: 100%;
+  flex-basis: 90%;
   justify-content: space-around;
 `;
 const LeftBox = styled.div`

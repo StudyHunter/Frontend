@@ -17,7 +17,8 @@ const TextBox = styled.div`
   // border: 2px solid black;
   border-radius: 10px;
   background-color: rgba(128, 128, 128, 0.7);
-  flex-grow: 1;
+  //flex-grow: 1;
+  flex-basis: 80%;
 
   //텍스트 넘칠 때
   overflow: hidden;
