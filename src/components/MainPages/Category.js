@@ -17,12 +17,12 @@ const Category = ({ onClick, categoryList }) => {
 export default Category;
 
 const CategoryContent = styled.button`
-  padding: 20px;
+  padding: 12px;
   margin: 3px;
   border-radius: 8px;
   color: #ffffff;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 12px;
+  font-weight: 500;
   ${(props) => {
     if (!props.value) {
       return `
@@ -47,6 +47,7 @@ const CategoryBox = styled.div`
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
+  flex-basis: 50%;
   justify-contenet: center;
   background-color: rgba(217, 217, 217, 0.6); //#d9d9d9
 `;

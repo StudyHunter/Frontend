@@ -6,6 +6,8 @@ import Room from '../components/MainPages/Room';
 import Info from '../components/MainPages/Info';
 import Tree from '../components/MainPages/Tree';
 import { useState } from 'react';
+import logo from '../images/logo.png';
+import { Link } from 'react-router-dom';
 const Main = () => {
   //더미데이터
   const tempCategoryList = {
@@ -39,17 +41,20 @@ const Main = () => {
   return (
     <MainBox>
       <UpperBox>
-        <MakeRoomComponent />
-        <MotivationText />
+        <StyledImage />
+        <IntroduceLink to="./Introduce">큐피 소개</IntroduceLink>
+        <MyPageLink to="./MyPage">마이페이지</MyPageLink>
       </UpperBox>
+      <MediumBox>
+        <MotivationText />
+        <Category categoryList={categoryList} onClick={handleCategoryClick} />
+      </MediumBox>
       <LowerBox>
-        <LeftBox>
-          <Category categoryList={categoryList} onClick={handleCategoryClick} />
-          <Room />
-        </LeftBox>
+        <Room />
         <RightBox>
           <Info />
           <Tree />
+          <MakeRoomComponent />
         </RightBox>
       </LowerBox>
     </MainBox>
@@ -58,6 +63,8 @@ const Main = () => {
 export default Main;
 
 const MainBox = styled.div`
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-basis: 100%;
   flex-direction: column;
@@ -66,26 +73,47 @@ const MainBox = styled.div`
 const UpperBox = styled.div`
   display: flex;
   flex-basis: 10%;
-  justify-content: space-around;
   align-items: center;
 `;
 
-const LowerBox = styled.div`
-  padding: 0 10px 10px 10px;
+const MediumBox = styled.div`
   display: flex;
-  flex-basis: 90%;
-  justify-content: space-around;
+  flex-basis: 10%;
 `;
-const LeftBox = styled.div`
+
+const LowerBox = styled.div`
   display: flex;
-  flex-direction: column;
-  flex-basis: 65%;
-  flex-wrap: nowrap;
+  flex-basis: 80%;
+  justify-content: space-around;
 `;
 const RightBox = styled.div`
   display: flex;
   flex-direction: column;
-  flex-basis: 35%;
+  flex-basis: 30%;
   flex-wrap: nowrap;
   flex-direction: column;
+`;
+
+const StyledImage = styled.div`
+  margin: 20px;
+  width: 50px;
+  height: 40px;
+  background-image: url('${logo}');
+  background-size: contain;
+`;
+
+const IntroduceLink = styled(Link)`
+  margin: 20px;
+  color: #0a0a23;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+`;
+
+const MyPageLink = styled(Link)`
+  margin: 20px;
+  color: #0a0a23;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
 `;

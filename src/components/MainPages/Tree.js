@@ -1,15 +1,32 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 const Tree = () => {
-  return <TreeBox>트리박스</TreeBox>;
+  return (
+    <TreeButton to="../pages/MakeRoom">
+      <TreeButtonFont>트리 꾸미기</TreeButtonFont>
+    </TreeButton>
+  );
 };
 export default Tree;
-const TreeBox = styled.div`
-  border-radius: 10px;
+
+const TreeButton = styled(Link)`
   margin: 10px;
   padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(10, 10, 35, 0.8); //#0a0a23
+  flex-basis: 15%;
+
   display: flex;
-  flex-wrap: wrap;
-  flex-basis: 70%;
-  justify-contenet: center;
-  background-color: rgba(217, 217, 217, 0.6); //#d9d9d9
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  &:hover {
+    background-color: rgba(125, 125, 160, 0.8);
+  }
+`;
+const TreeButtonFont = styled.div`
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
 `;

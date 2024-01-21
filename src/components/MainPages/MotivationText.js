@@ -12,26 +12,22 @@ const MotivationText = () => {
 export default MotivationText;
 
 const TextBox = styled.div`
-  margin: 20px;
-  padding: 30px;
-  // border: 2px solid black;
+  margin: 10px;
+  padding: 10px;
   border-radius: 10px;
   background-color: rgba(128, 128, 128, 0.7);
-  //flex-grow: 1;
-  flex-basis: 80%;
+  flex-basis: 50%;
 
   //텍스트 넘칠 때
   overflow: hidden;
   white-space: nowrap;
+  display: flex;
   text-overflow: hidden;
-
-  //반응형
-  @media screen and (max-width: 900px) {
-    display: none;
-  }
+  align-items: center;
+  justify-content: center;
 `;
 
 const TextBoxFont = styled.div`
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
 `;
