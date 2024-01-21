@@ -9,7 +9,7 @@ const InfoBox = styled.div`
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  flex-basis: 30%;
+  flex-basis: 75%;
   justify-contenet: center;
   background-color: rgba(217, 217, 217, 0.6); //#d9d9d9
 `;
