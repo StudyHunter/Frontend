@@ -1,5 +1,4 @@
 import { createGlobalStyle } from 'styled-components';
-import wallPaper from './images/wallpaper.jpeg';
 
 const GlobalStyles = createGlobalStyle`
     html, body{
@@ -10,7 +9,9 @@ const GlobalStyles = createGlobalStyle`
     //배경화면 이미지
     body{
         background-size : cover;
-        background-image: url(${wallPaper});
+        background-image: url(${
+          process.env.PUBLIC_URL + '/img/wallpaper.jpeg'
+        });
     }
     //버튼
     button{

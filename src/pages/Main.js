@@ -49,7 +49,7 @@ const Main = () => {
         <Category categoryList={categoryList} onClick={handleCategoryClick} />
       </MediumBox>
       <LowerBox>
-        <Room />
+        <Room categoryList={categoryList} />
         <RightBox>
           <Info />
           <Tree />

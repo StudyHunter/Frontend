@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 //swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -12,9 +13,10 @@ import tempRoomDatas from '../../json/RoomDummyData';
 //슬라이드에 들어가는 방 개수
 const ROOM_COUNT = 8;
 
-const Room = () => {
-  //방 정보 더미데이터
-  const roomDatas = tempRoomDatas;
+const Room = ({ categoryList }) => {
+  const roomDatas = filterRoomDatas(tempRoomDatas);
+
+  //SwiperSlide ROOM_COUNT 단위로 구획
   function divideRoom(roomDatas) {
     let countRoom = 0;
     let countTotal = 0;
@@ -26,12 +28,6 @@ const Room = () => {
         countRoom = 0;
         swiper.push(<StyledSwiperSlide>{swiperSlide}</StyledSwiperSlide>);
         swiperSlide = [];
-      }
-      //종료조건
-      if (countTotal === roomDatas.length - 1) {
-        swiper.push(<StyledSwiperSlide>{swiperSlide}</StyledSwiperSlide>);
-        console.log(swiper);
-        return swiper;
       }
       swiperSlide.push(
         <Board to="/" key={roomData.room_id}>
@@ -53,9 +49,43 @@ const Room = () => {
           </RightRoomBox>
         </Board>
       );
+      //종료조건
+      if (countTotal === roomDatas.length - 1) {
+        console.log(swiperSlide);
+        swiper.push(<StyledSwiperSlide>{swiperSlide}</StyledSwiperSlide>);
+        return swiper;
+      }
       countRoom++;
       countTotal++;
     }
+  }
+  //filter clicked category content
+  function filterCategory(categoryList) {
+    let newCategoryList = [];
+    for (const [key, value] of Object.entries(categoryList)) {
+      if (value) newCategoryList.push(key);
+    }
+    return newCategoryList;
+  }
+  //check subset
+  function isSubSet(superSet, setA) {
+    let result = true;
+    setA.forEach((e) => {
+      if (!superSet.has(e)) result = false;
+    });
+    return result;
+  }
+  //filter roomDatas
+  function filterRoomDatas(roomDatas) {
+    let newList = [];
+    const newCategoryList = new Set(filterCategory(categoryList));
+    for (const roomData of roomDatas) {
+      const roomDataTags = new Set(roomData.tags);
+      if (isSubSet(roomDataTags, newCategoryList)) {
+        newList.push(roomData);
+      }
+    }
+    return newList;
   }
   return (
     <RoomBox>
