@@ -17,7 +17,7 @@ const Category = ({ onClick, categoryList }) => {
 export default Category;
 
 const CategoryContent = styled.button`
-  padding: 12px;
+  padding: 15px;
   margin: 3px;
   border-radius: 8px;
   color: #ffffff;
