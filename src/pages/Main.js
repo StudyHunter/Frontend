@@ -6,7 +6,6 @@ import Room from '../components/MainPages/Room';
 import Info from '../components/MainPages/Info';
 import Tree from '../components/MainPages/Tree';
 import { useState } from 'react';
-import logo from '../images/logo.png';
 import { Link } from 'react-router-dom';
 const Main = () => {
   //더미데이터
@@ -98,7 +97,7 @@ const StyledImage = styled.div`
   margin: 20px;
   width: 50px;
   height: 40px;
-  background-image: url('${logo}');
+  background-image: url(${process.env.PUBLIC_URL + '/img/logo.png'});
   background-size: contain;
 `;
 
