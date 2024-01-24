@@ -41,7 +41,7 @@ const InfoBox = styled.div`
 const InfoImgBox = styled.div`
   padding: 30px;
   display: flex;
-  flex-basis: 50%;
+  flex-basis: 55%;
   justify-content: center;
   align-items: center;
 `;
@@ -49,31 +49,31 @@ const InfoImgBox = styled.div`
 const InfoImg = styled.div`
   display: flex;
   height: 100%;
-  flex-basis: 58%;
-  border-radius: 70%;
+  flex-basis: 55%;
+  border-radius: 10%;
   margin: 10px;
   background-image: url(${(props) => process.env.PUBLIC_URL + props.$user_img});
   background-size: cover;
 `;
 
 const UserName = styled.div`
-  font-size: 30px;
+  font-size: 28px;
   display: flex;
-  flex-vasis: 14%;
+  flex-vasis: 15%;
   justify-content: center;
   align-items: center;
 `;
 
 const InfoTags = styled.div`
   display: flex;
-  flex-basis: 14%;
+  flex-basis: 15%;
   justify-content: center;
   align-items: center;
 `;
 
 const StudyTime = styled.div`
   display: flex;
-  flex-basis: 14%;
+  flex-basis: 15%;
   justify-content: center;
   align-items: center;
   :first-child {
