@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
 //swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -9,7 +8,7 @@ import '../../styles/Swiper.css';
 import { Navigation } from 'swiper/modules';
 
 //dymmy data
-import tempRoomDatas from '../../json/RoomDummyData';
+import tempRoomDatas from '../../DummyData/RoomDummyData';
 //슬라이드에 들어가는 방 개수
 const ROOM_COUNT = 8;
 
@@ -33,7 +32,7 @@ const Room = ({ categoryList }) => {
         <Board to="/" key={roomData.room_id}>
           <BoardImage $thumbnail={roomData.thumbnail}></BoardImage>
           <RightRoomBox>
-            <BoardTitle>{roomData.title + '  ' + roomData.room_id}</BoardTitle>
+            <BoardTitle>{roomData.title}</BoardTitle>
             <LowerRoomBox>
               <BoardTags>
                 {roomData.tags.map((tag, idx) => {
@@ -51,7 +50,6 @@ const Room = ({ categoryList }) => {
       );
       //종료조건
       if (countTotal === roomDatas.length - 1) {
-        console.log(swiperSlide);
         swiper.push(<StyledSwiperSlide>{swiperSlide}</StyledSwiperSlide>);
         return swiper;
       }
@@ -148,6 +146,8 @@ const BoardTitle = styled.div`
 const BoardTags = styled.div`
   display: flex;
   flex-basis: 60%;
+  color: #0a0a23;
+  font-size: 15px;
 `;
 const UserCount = styled.div`
   display: flex;
