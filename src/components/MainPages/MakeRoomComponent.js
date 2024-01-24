@@ -15,7 +15,7 @@ const MakeRoomButton = styled(Link)`
   padding: 10px;
   border-radius: 10px;
   background-color: rgba(10, 10, 35, 0.8); //#0a0a23
-  flex-basis: 15%;
+  flex-basis: 10%;
   display: flex;
   align-items: center;
   justify-content: center;
