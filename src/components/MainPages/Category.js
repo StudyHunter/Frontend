@@ -1,6 +1,8 @@
+import { useCallback } from 'react';
 import styled from 'styled-components';
 const Category = ({ onClick, categoryList }) => {
   //category 요소 생성 함수
+
   function makeCategoryBox(categoryList) {
     const result = [];
     for (const [key, value] of Object.entries(categoryList)) {

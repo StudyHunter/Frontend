@@ -17,7 +17,7 @@ const Info = () => {
       </StudyTime>
       <InfoTags>
         {InfoDummyData.user_tags.map((tag, idx) => {
-          return <Tag key={idx}>{'#' + tag}</Tag>;
+          return <Tag key={idx}>{tag}</Tag>;
         })}
       </InfoTags>
     </InfoBox>

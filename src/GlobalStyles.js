@@ -5,6 +5,7 @@ const GlobalStyles = createGlobalStyle`
         height: 100%;
         margin : 0;
         padding : 0;
+        font-family: 'Gowun Dodum', sans-serif;
     }
     //배경화면 이미지
     body{
@@ -17,6 +18,7 @@ const GlobalStyles = createGlobalStyle`
     button{
         cursor : pointer;
         border : none;
+        font-family: 'Gowun Dodum', sans-serif;
     }
     .App{
         display: flex;

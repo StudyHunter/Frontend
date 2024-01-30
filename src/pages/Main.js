@@ -5,7 +5,7 @@ import Category from '../components/MainPages/Category';
 import Room from '../components/MainPages/Room';
 import Info from '../components/MainPages/Info';
 import Tree from '../components/MainPages/Tree';
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 const Main = () => {
   //더미데이터
@@ -20,6 +20,7 @@ const Main = () => {
   };
 
   const [categoryList, setCategoryList] = useState(tempCategoryList);
+
   const handleCategoryClick = (e) => {
     const value = e.currentTarget.innerHTML;
     if (categoryList[value]) {
@@ -36,25 +37,41 @@ const Main = () => {
       });
     }
   };
-
-  return (
-    <MainBox>
+  const memoizedRightBox = useMemo(() => {
+    return (
+      <RightBox>
+        <Info />
+        <Tree />
+        <MakeRoomComponent />
+      </RightBox>
+    );
+  }, []);
+  const memoizedUpperBox = useMemo(() => {
+    return (
       <UpperBox>
         <StyledImage />
         <IntroduceLink to="./Introduce">큐피 소개</IntroduceLink>
         <MyPageLink to="./MyPage">마이페이지</MyPageLink>
       </UpperBox>
+    );
+  }, []);
+  const memoizedMotivationText = useMemo(() => <MotivationText />, []);
+
+  return (
+    <MainBox>
+      {memoizedUpperBox}
       <MediumBox>
-        <MotivationText />
+        {memoizedMotivationText}
         <Category categoryList={categoryList} onClick={handleCategoryClick} />
       </MediumBox>
       <LowerBox>
         <Room categoryList={categoryList} />
-        <RightBox>
+        {/* <RightBox>
           <Info />
           <Tree />
           <MakeRoomComponent />
-        </RightBox>
+        </RightBox> */}
+        {memoizedRightBox}
       </LowerBox>
     </MainBox>
   );

@@ -113,11 +113,11 @@ const StyledSwiperSlide = styled(SwiperSlide)`
   flex-wrap: wrap;
   background-color: rgba(217, 217, 217, 0.6); //#d9d9d9
 `;
-
 const Board = styled(Link)`
   display: flex;
   flex-basis: 45%;
   height: 20%;
+  //height: 12%;
   margin: 10px;
   border-radius: 10px;
   justify-contenet: center;
@@ -128,6 +128,7 @@ const Board = styled(Link)`
 const BoardImage = styled.div`
   border-radius: 10px;
   flex-basis: 25%;
+  //flex-basis: 12%;
   margin: 10px;
   background-image: url(${(props) =>
     process.env.PUBLIC_URL + props.$thumbnail});
@@ -138,20 +139,22 @@ const BoardTitle = styled.div`
   flex-basis: 80%;
   border-radius: 10px;
   margin: 10px;
-  padding: 10px;
+  padding-left: 20px;
   background-color: rgba(217, 217, 217, 0.6); //#d9d9d9
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 `;
 const BoardTags = styled.div`
   display: flex;
-  flex-basis: 60%;
+  justify-content: flex-start;
+  align-itmes: center;
+  flex-basis: 80%;
   color: #0a0a23;
   font-size: 15px;
 `;
 const UserCount = styled.div`
   display: flex;
-  flex-basis: 40%;
+  flex-basis: 20%;
   margin: 5px;
   align-items: center;
   justify-content: center;
@@ -159,8 +162,7 @@ const UserCount = styled.div`
   background-color: rgba(217, 217, 217, 0.6); //#d9d9d9
 `;
 const Tag = styled.div`
-  display: flex;
-  flex-grow: 1;
+  width: auto;
   padding: 12px;
   margin: 3px;
   border-radius: 8px;
