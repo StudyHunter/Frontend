@@ -50,7 +50,7 @@ const tempRoomDatas = [
   {
     room_id: 5,
     author: 'jongbin',
-    title: '투썸에서 공부해요',
+    title: '공부해요',
     expected_users: 6,
     present_users: 1,
     expected_schedules: 60,
@@ -210,7 +210,7 @@ const tempRoomDatas = [
     expected_users: 6,
     present_users: 1,
     expected_schedules: 60,
-    tags: ['프론트엔드', '백엔드', '데이터사이언스'],
+    tags: ['프론트엔드', '데이터사이언스'],
     room_type: 1,
     room_status: 'open',
     thumbnail: '/img/tempImage.jpg',
