@@ -23,6 +23,7 @@ function MakingRoom() {
           {/* <StyledRoomName>
             방제목
           </StyledRoomName> */}
+          다 사라졌는데요
         </SecondSection>
         <ThirdSection>
 
