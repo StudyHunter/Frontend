@@ -4,11 +4,17 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import MakeRoom from './pages/MakeRoom'; 
 import logo from './img/logo.png';
+import { BrowserRouter } from 'react-router-dom';
+import MainHeader from './Components/MainHeader';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <MakeRoom />
+    <BrowserRouter>
+      <MainHeader/>
+      <MakeRoom />
+    </BrowserRouter>
+    
   </React.StrictMode>
 );
 

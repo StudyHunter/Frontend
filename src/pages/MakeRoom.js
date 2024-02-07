@@ -12,7 +12,7 @@ body{
 function MakeRoom() {
   return(
     <div>
-      <MainHeader />
+      
       <MakingRoom />
     </div>
   )
