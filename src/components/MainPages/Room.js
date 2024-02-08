@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 //swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -29,7 +29,7 @@ const Room = ({ categoryList }) => {
         swiperSlide = [];
       }
       swiperSlide.push(
-        <Board to="/" key={roomData.room_id}>
+        <Board to="../InnerRoomPages/InnerRoom" key={roomData.room_id}>
           <BoardImage $thumbnail={roomData.thumbnail}></BoardImage>
           <RightRoomBox>
             <BoardTitle>{roomData.title}</BoardTitle>
@@ -50,6 +50,27 @@ const Room = ({ categoryList }) => {
       );
       //종료조건
       if (countTotal === roomDatas.length - 1) {
+        //defaultBoard 채워넣기
+        if (roomDatas.length !== ROOM_COUNT) {
+          for (
+            let i = 0;
+            i < ROOM_COUNT - (roomDatas.length % ROOM_COUNT);
+            i++
+          ) {
+            swiperSlide.push(
+              <DefultBoard>
+                <BoardImage></BoardImage>
+                <RightRoomBox>
+                  <BoardTitle></BoardTitle>
+                  <LowerRoomBox>
+                    <BoardTags></BoardTags>
+                    <UserCount></UserCount>
+                  </LowerRoomBox>
+                </RightRoomBox>
+              </DefultBoard>
+            );
+          }
+        }
         swiper.push(<StyledSwiperSlide>{swiperSlide}</StyledSwiperSlide>);
         return swiper;
       }
@@ -125,6 +146,10 @@ const Board = styled(Link)`
   color: black;
   text-decoration: none;
 `;
+const DefultBoard = styled(Board)`
+  background-color: rgba(128, 128, 128, 0.7);
+`;
+
 const BoardImage = styled.div`
   border-radius: 10px;
   flex-basis: 25%;
