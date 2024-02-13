@@ -14,5 +14,4 @@ const Layout = styled.div`
   display: flex;
   flex-basis: 35%;
   flex-direction: column;
-  border: 1px solid black;
 `;

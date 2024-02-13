@@ -12,10 +12,6 @@ function App() {
         <Routes>
           <Route index element={<Main />}></Route>
           <Route path="/InnerRoom" element={<InnerRoom />} />
-          <Route path="/pages/MakeRoom" element={<MakeRoom/>} />
-          {/* <Route path="/pages/MakeRoom" element={<UserMakeRoom/>} />
-        <Route path="/qpinfo" element={<QpInfo />}/>
-        <Route path="/myPage" element={<MyPage/>} /> */}
         </Routes>
       </BrowserRouter>
     </div>

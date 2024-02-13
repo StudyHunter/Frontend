@@ -63,7 +63,6 @@ const Layout = styled.div`
   flex-direction: column;
   flex-basis: 20%;
   font-size: 25px;
-  border: 1px solid black;
 `;
 const TokenBox = styled.div`
   border-radius: 10px;
@@ -72,7 +71,7 @@ const TokenBox = styled.div`
   flex-basis: 20%;
   justify-content: center;
   align-items: center;
-  background-color: rgba(128, 128, 128, 0.5);
+  background-color: rgba(128, 128, 128, 0.2); //#808080
 
   h2 {
     font-size: 25px;
@@ -89,7 +88,7 @@ const TimeBox = styled.div`
   flex-basis: 20%;
   justify-content: center;
   align-items: center;
-  background-color: rgba(128, 128, 128, 0.5);
+  background-color: rgba(128, 128, 128, 0.2); //#808080
   font-size: 25px;
 `;
 const ControlTimeButton = styled.button`
