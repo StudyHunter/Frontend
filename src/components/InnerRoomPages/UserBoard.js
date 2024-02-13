@@ -24,7 +24,7 @@ const Board = styled.div`
   flex-basis: 30%;
   justify-content: center;
   align-items: center;
-  background-color: rgba(128, 128, 128, 0.5);
+  background-color: rgba(255, 160, 0, 0.2);
 `;
 
 const UserImage = styled.div`

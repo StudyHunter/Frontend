@@ -19,7 +19,6 @@ const Layout = styled.div`
   border-radius: 10px;
   display: flex;
   flex-basis: 45%;
-  border: 1px solid black;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;

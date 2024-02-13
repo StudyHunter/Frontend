@@ -30,7 +30,7 @@ const UpperBoxTitle = styled.div`
   margin: 10px;
   border-radius: 10px;
   flex-basis: 80%;
-
+  color: #ff7a00;
   //텍스트 넘칠 때
   overflow: hidden;
   white-space: nowrap;

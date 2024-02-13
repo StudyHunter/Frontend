@@ -10,26 +10,73 @@ const InnerRoom = () => {
 
   return (
     <Layout>
-      <InnerRoomUpperBox roomData={roomData} />
-      <InnerRoomLowerBox>
-        <LowerLeftBox />
-        <LowerCenterBox />
-        <LowerRightBox />
-      </InnerRoomLowerBox>
+      <UpperLayout>
+        <StyledImage />
+        <TextBox>
+          <TextBoxFont>
+            최대36자까지가능최대36자까지가능최대36자까지가능최대36까지가능
+          </TextBoxFont>
+        </TextBox>
+      </UpperLayout>
+      <LowerLayout>
+        <InnerRoomUpperBox roomData={roomData} />
+        <InnerRoomLowerBox>
+          <LowerLeftBox />
+          <LowerCenterBox />
+          <LowerRightBox />
+        </InnerRoomLowerBox>
+      </LowerLayout>
     </Layout>
   );
 };
 export default InnerRoom;
 
 const Layout = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+`;
+const UpperLayout = styled.div`
+  margin: 0 30px 0 30px;
+  display: flex;
+  flex-basis: 10%;
+  align-items: center;
+`;
+const LowerLayout = styled.div`
   border-radius: 10px;
   margin: 30px;
   display: flex;
-  flex-basis: 100%;
+  flex-basis: 90%;
   flex-direction: column;
-  background-color: rgba(217, 217, 217, 0.6); //#d9d9d9
+  background-color: rgba(224, 224, 224, 0.6); //#E0E0E0
 `;
 const InnerRoomLowerBox = styled.div`
   display: flex;
   flex-basis: 90%;
+`;
+
+const StyledImage = styled.div`
+  width: 60px;
+  height: 50px;
+  background-image: url(${process.env.PUBLIC_URL + '/img/logo.png'});
+  background-size: cover;
+`;
+const TextBox = styled.div`
+  flex-basis: 95%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+
+  //텍스트 넘칠 때
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  text-overflow: hidden;
+  align-items: center;
+  justify-content: center;
+`;
+
+const TextBoxFont = styled.div`
+  font-size: 18px;
+  font-weight: 700;
 `;
