@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Main from './pages/Main';
 import InnerRoom from './pages/InnerRoom';
 import GlobalStyles from './GlobalStyles';
+import MakeRoom from './pages/MakeRoom';
 
 function App() {
   return (
@@ -11,10 +12,10 @@ function App() {
         <Routes>
           <Route index element={<Main />}></Route>
           <Route path="/InnerRoom" element={<InnerRoom />} />
-          <Route path="/pages/MakeRoom" element={<UserMakeRoom/>} />
+          <Route path="/pages/MakeRoom" element={<MakeRoom/>} />
+          {/* <Route path="/pages/MakeRoom" element={<UserMakeRoom/>} />
         <Route path="/qpinfo" element={<QpInfo />}/>
-        <Route path="/myPage" element={<MyPage/>} />
-        <>수정</>
+        <Route path="/myPage" element={<MyPage/>} /> */}
         </Routes>
       </BrowserRouter>
     </div>
