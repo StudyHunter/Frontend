@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { useMemo } from 'react';
 const MotivationText = () => {
+  
   const memoizedMotivationBox = useMemo(() => {
     return (
-      <TextBox>
+      <TextBox > 
         <TextBoxFont>
           최대36자까지가능최대36자까지가능최대36자까지가능최대36까지가능
         </TextBoxFont>
@@ -18,7 +19,7 @@ const TextBox = styled.div`
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
-  background-color: rgba(128, 128, 128, 0.7);
+  // background-color: rgba(128, 128, 128, 0.7);
   flex-basis: 50%;
 
   //텍스트 넘칠 때
