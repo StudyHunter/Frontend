@@ -11,6 +11,10 @@ function App() {
         <Routes>
           <Route index element={<Main />}></Route>
           <Route path="/InnerRoom" element={<InnerRoom />} />
+          <Route path="/pages/MakeRoom" element={<UserMakeRoom/>} />
+        <Route path="/qpinfo" element={<QpInfo />}/>
+        <Route path="/myPage" element={<MyPage/>} />
+        <>수정</>
         </Routes>
       </BrowserRouter>
     </div>
