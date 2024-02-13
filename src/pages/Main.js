@@ -1,12 +1,10 @@
 import styled from 'styled-components';
-import MakeRoomComponent from '../components/MainPages/MakeRoomComponent';
 import MotivationText from '../components/MainPages/MotivationText';
+import UpperBox from '../components/MainPages/UpperBox';
+import RightBox from '../components/MainPages/RightBox';
 import Category from '../components/MainPages/Category';
 import Room from '../components/MainPages/Room';
-import Info from '../components/MainPages/Info';
-import Tree from '../components/MainPages/Tree';
-import { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { useState } from 'react';
 const Main = () => {
   //더미데이터
   const tempCategoryList = {
@@ -37,41 +35,17 @@ const Main = () => {
       });
     }
   };
-  const memoizedRightBox = useMemo(() => {
-    return (
-      <RightBox>
-        <Info />
-        <Tree />
-        <MakeRoomComponent />
-      </RightBox>
-    );
-  }, []);
-  const memoizedUpperBox = useMemo(() => {
-    return (
-      <UpperBox>
-        <StyledImage />
-        <IntroduceLink to="./Introduce">큐피 소개</IntroduceLink>
-        <MyPageLink to="./MyPage">마이페이지</MyPageLink>
-      </UpperBox>
-    );
-  }, []);
-  const memoizedMotivationText = useMemo(() => <MotivationText />, []);
 
   return (
     <MainBox>
-      {memoizedUpperBox}
+      <UpperBox />
       <MediumBox>
-        {memoizedMotivationText}
+        <MotivationText />
         <Category categoryList={categoryList} onClick={handleCategoryClick} />
       </MediumBox>
       <LowerBox>
         <Room categoryList={categoryList} />
-        {/* <RightBox>
-          <Info />
-          <Tree />
-          <MakeRoomComponent />
-        </RightBox> */}
-        {memoizedRightBox}
+        <RightBox />
       </LowerBox>
     </MainBox>
   );
@@ -86,14 +60,6 @@ const MainBox = styled.div`
   flex-direction: column;
 `;
 
-const UpperBox = styled.div`
-  display: flex;
-  flex-basis: 10%;
-  align-items: center;
-  font-size: 20px;
-  font-weight: 700;
-`;
-
 const MediumBox = styled.div`
   display: flex;
   flex-basis: 10%;
@@ -103,31 +69,4 @@ const LowerBox = styled.div`
   display: flex;
   flex-basis: 80%;
   justify-content: space-around;
-`;
-const RightBox = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex-basis: 30%;
-  flex-wrap: nowrap;
-  flex-direction: column;
-`;
-
-const StyledImage = styled.div`
-  margin: 0 30px 0 30px;
-  width: 60px;
-  height: 50px;
-  background-image: url(${process.env.PUBLIC_URL + '/img/logo.png'});
-  background-size: contain;
-`;
-
-const IntroduceLink = styled(Link)`
-  margin: 20px;
-  color: #0a0a23;
-  text-decoration: none;
-`;
-
-const MyPageLink = styled(Link)`
-  margin: 20px;
-  color: #0a0a23;
-  text-decoration: none;
 `;

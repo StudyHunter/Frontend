@@ -1,13 +1,16 @@
 import styled from 'styled-components';
-
+import { useMemo } from 'react';
 const MotivationText = () => {
-  return (
-    <TextBox>
-      <TextBoxFont>
-        최대36자까지가능최대36자까지가능최대36자까지가능최대36까지가능
-      </TextBoxFont>
-    </TextBox>
-  );
+  const memoizedMotivationBox = useMemo(() => {
+    return (
+      <TextBox>
+        <TextBoxFont>
+          최대36자까지가능최대36자까지가능최대36자까지가능최대36까지가능
+        </TextBoxFont>
+      </TextBox>
+    );
+  }, []);
+  return memoizedMotivationBox;
 };
 export default MotivationText;
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 //swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -29,7 +29,7 @@ const Room = ({ categoryList }) => {
         swiperSlide = [];
       }
       swiperSlide.push(
-        <Board to="../InnerRoomPages/InnerRoom" key={roomData.room_id}>
+        <Board to="/InnerRoom/" state={roomData} key={roomData.room_id}>
           <BoardImage $thumbnail={roomData.thumbnail}></BoardImage>
           <RightRoomBox>
             <BoardTitle>{roomData.title}</BoardTitle>

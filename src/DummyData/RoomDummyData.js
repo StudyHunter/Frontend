@@ -2,7 +2,7 @@ const tempRoomDatas = [
   {
     room_id: 1,
     author: 'jongbin',
-    title: '투썸에서 공부해요',
+    title: '투썸에서 공부하지 마요!',
     expected_users: 6,
     present_users: 1,
     expected_schedules: 60,
