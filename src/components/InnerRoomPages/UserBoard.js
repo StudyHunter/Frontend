@@ -54,6 +54,7 @@ const UserTag = styled.div`
   border-radius: 8px;
   color: #ffffff;
   font-size: 10px;
-  font-weight: 500;
-  background-color: rgba(10, 10, 35, 0.8);
+  font-weight: 700;
+  border: 2px solid rgba(255, 122, 0, 1);
+  color: #ff7a00;
 `;

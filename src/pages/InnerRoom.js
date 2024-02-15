@@ -44,7 +44,7 @@ const UpperLayout = styled.div`
 `;
 const LowerLayout = styled.div`
   border-radius: 10px;
-  margin: 30px;
+  margin: 0px 30px 30px 30px;
   display: flex;
   flex-basis: 90%;
   flex-direction: column;
@@ -63,7 +63,6 @@ const StyledImage = styled.div`
 `;
 const TextBox = styled.div`
   flex-basis: 95%;
-  margin: 10px;
   padding: 10px;
   border-radius: 10px;
 
@@ -77,6 +76,7 @@ const TextBox = styled.div`
 `;
 
 const TextBoxFont = styled.div`
-  font-size: 18px;
+  color: #ff7a00;
+  font-size: 25px;
   font-weight: 700;
 `;

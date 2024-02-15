@@ -74,11 +74,11 @@ const TokenBox = styled.div`
   background-color: rgba(128, 128, 128, 0.2); //#808080
 
   h2 {
-    font-size: 25px;
-    color: red;
+    font-size: 30px;
+    color: #ff7a00;
   }
   h1 {
-    font-size: 25px;
+    font-size: 35px;
   }
 `;
 const TimeBox = styled.div`
@@ -89,7 +89,9 @@ const TimeBox = styled.div`
   justify-content: center;
   align-items: center;
   background-color: rgba(128, 128, 128, 0.2); //#808080
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: 700;
+  color: #ff7a00;
 `;
 const ControlTimeButton = styled.button`
   border-radius: 10px;
@@ -100,9 +102,9 @@ const ControlTimeButton = styled.button`
   align-items: center;
   color: #ffffff;
   font-size: 20px;
-  background-color: rgba(10, 10, 35, 0.8);
+  background-color: #ff7a00;
   &:hover {
-    background-color: rgba(125, 125, 160, 0.8);
+    background-color: rgba(255, 122, 0, 0.7);
   }
 `;
 
@@ -115,9 +117,9 @@ const SubmitButton = styled.button`
   align-items: center;
   color: #ffffff;
   font-size: 20px;
-  background-color: rgba(10, 10, 35, 0.8);
+  background-color: #ff7a00;
   &:hover {
-    background-color: rgba(125, 125, 160, 0.8);
+    background-color: rgba(255, 122, 0, 0.7);
   }
 `;
 const MarginBox = styled.div`
