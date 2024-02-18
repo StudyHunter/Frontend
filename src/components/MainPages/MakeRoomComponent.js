@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const MakeRoomComponent = () => {
   return (
-    <MakeRoomButton to="../pages/MakeRoom">
+    <MakeRoomButton to="/MakeRoom">
       <MakeRoomButtonFont>방만들기</MakeRoomButtonFont>
     </MakeRoomButton>
   );
