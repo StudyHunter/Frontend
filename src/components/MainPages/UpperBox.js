@@ -29,13 +29,48 @@ const MyPageLink = styled(Link)`
   text-decoration: none;
 `;
 
+
+const StyledMenu = styled.button`
+appearance: none;
+border: transparent;
+background-color: transparent;
+cursor: pointer;
+padding: 10px 50px;
+color: #FF7A00;
+display: inline;
+font-family: 'Inter', sans-serif;
+
+&:hover{
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: #FF7A00;
+  // border-bottom: 5px solid #FF7A00;
+
+  // background-color: #FF7A00;
+  // color: white;
+  // border-radius: 5px;
+}
+`
+const StyledText = styled.div`
+// position: absolute;
+// width: 488px;
+// height: 19px;
+// left: 262px;
+// top: 71px;
+
+
+`
+
+
 const UpperBox = () => {
   const MemoizedUpperBox = useMemo(() => {
     return (
       <Layout>
         <StyledImage />
-        <IntroduceLink to="./Introduce">큐피 소개</IntroduceLink>
-        <MyPageLink to="./MyPage">마이페이지</MyPageLink>
+        <StyledText>
+          <StyledMenu><IntroduceLink to="/Introduce">큐피 소개</IntroduceLink></StyledMenu>
+          <StyledMenu><MyPageLink to="/MyPage">마이페이지</MyPageLink> </StyledMenu>
+        </StyledText>
       </Layout>
     );
   }, []);

@@ -6,6 +6,7 @@ import LowerCenterBox from '../components/InnerRoomPages/LowerCenterBox';
 import LowerRightBox from '../components/InnerRoomPages/LowerRightBox';
 const InnerRoom = () => {
   const location = useLocation();
+  console.log(" ", location);
   const roomData = location.state;
 
   return (

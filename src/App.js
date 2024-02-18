@@ -3,6 +3,7 @@ import Main from './pages/Main';
 import InnerRoom from './pages/InnerRoom';
 import GlobalStyles from './GlobalStyles';
 import MakeRoom from './pages/MakeRoom';
+import MyPage from './pages/MyPage';
 
 function App() {
   return (
@@ -12,6 +13,11 @@ function App() {
         <Routes>
           <Route index element={<Main />}></Route>
           <Route path="/InnerRoom" element={<InnerRoom />} />
+          <Route path="/MakeRoom" element={<MakeRoom/>} />
+          <Route path="/myPage" element={<MyPage/>} />
+          {/* <Route path="/pages/MakeRoom" element={<UserMakeRoom/>} />
+        <Route path="/qpinfo" element={<QpInfo />}/>
+        <Route path="/myPage" element={<MyPage/>} /> */}
         </Routes>
       </BrowserRouter>
     </div>
