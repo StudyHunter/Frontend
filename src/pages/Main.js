@@ -4,7 +4,9 @@ import UpperBox from '../components/MainPages/UpperBox';
 import RightBox from '../components/MainPages/RightBox';
 import Category from '../components/MainPages/Category';
 import Room from '../components/MainPages/Room';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+
 const Main = () => {
   //더미데이터
   const tempCategoryList = {
@@ -16,7 +18,13 @@ const Main = () => {
     게임: false,
     시스템: false,
   };
-
+  //Main 페이지 진입 시 API 호출
+  useEffect(() => {
+    axios
+      .get('API 엔드포인트')
+      .then((response) => {})
+      .catch((error) => {});
+  }, []);
   const [categoryList, setCategoryList] = useState(tempCategoryList);
 
   const handleCategoryClick = (e) => {
