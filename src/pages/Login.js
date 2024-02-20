@@ -8,7 +8,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
     // const res = await axios.post('http://localhost:3000/login', {
     //   username,
     //   password,
