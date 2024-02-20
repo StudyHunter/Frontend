@@ -31,6 +31,7 @@ const TreeThings = () => {
   return(
     <StyeldOverall>
 
+    {/* 왼쪽에 놓일 아이템들 */}
     <StyledTreeItemSection>
     <StyledInvItemBox>
       <StyledIdvItem src={item1} onClick={onImgClicked} acorns={acorns} />
@@ -39,54 +40,19 @@ const TreeThings = () => {
     </StyledInvItemBox>
     </StyledTreeItemSection>
 
-      <TreeImgSection>
+    {/* 트리 이미지 */}
+    <TreeImgSectionBox>
+      <TreeImgSection image={item15}>
         
-          <TreeImgBox>
-            <StyledIdvItemTree src={item1} acorns={acorns}/>
-          </TreeImgBox>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          <TreeImgBox/>
-          
-        
+          <TreeImgBox></TreeImgBox><TreeImgBox/><TreeImgBox/><TreeImgBox/>
+          <TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/>
+          <TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox><StyledIdvItemTree src={item1} acorns={acorns}/></TreeImgBox><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/>
+          <TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/>
+          <TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/>
+          {/* <TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/><TreeImgBox/> */}
+
       </TreeImgSection>
+      </TreeImgSectionBox>
     </StyeldOverall>
     
   )
@@ -110,21 +76,36 @@ width:50px;
 background-color: white;
 margin: 5px;
 `
+
+const TreeImgSectionBox = styled.div`
+width: 500px;
+height: 700px;
+// background-color: yellow;
+`
 const TreeImgSection = styled.div`
+padding: 4%;
+background-image: url(${props => props.image});
+background-size: 100%;
 display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 background-color: purple;
 flex-basis: 60%;
+width: 100%;
+height: 100%;
 
 `
 const StyledInvItemBox = styled.div`
-width: 50px;
-height: 50px;
+width: 80px;
+height: 80px;
 cursor: pointer;
 display: flex;
-background-color: red;
+// background-color: red;
 `
 const StyledIdvItem = styled.img`
+border-radius: 5px;
+margin: 5px;
+background-color: white;
+padding: 7px;
 display: flex;
 width: 100%;
 height: 100%;

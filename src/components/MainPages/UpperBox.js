@@ -39,6 +39,9 @@ padding: 10px 50px;
 color: #FF7A00;
 display: inline;
 font-family: 'Inter', sans-serif;
+border-bottom-width: 2px;
+border-bottom-style: solid;
+border-bottom-color: transparent;
 
 &:hover{
   border-bottom-width: 2px;
