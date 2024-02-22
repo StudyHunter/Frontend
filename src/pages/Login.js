@@ -19,7 +19,7 @@ const Login = () => {
   };
   return (
     <FormBox onSubmit={handleSubmit}>
-      <StyledImage />
+      <StyledImgBox><StyledImage /></StyledImgBox>
       <IdInput
         type="text"
         value={userId}
@@ -81,10 +81,17 @@ const SignInButton = styled(Link)`
   font-size: 20px;
   font-weight: 700;
 `;
+
+const StyledImgBox = styled.div`
+width: 200px;
+height: 180px;
+padding: 20px;
+`
+
 const StyledImage = styled.div`
-  margin: 0 30px 0 30px;
-  width: 60px;
-  height: 50px;
-  background-image: url(${process.env.PUBLIC_URL + '/img/logo.png'});
+  //  margin: 0 30px 0 30px;
+  width: 100%;
+  height: 100%;
+  background-image: url(${process.env.PUBLIC_URL + '/img/logo.svg'});
   background-size: contain;
 `;
