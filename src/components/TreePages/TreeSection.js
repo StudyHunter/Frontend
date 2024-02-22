@@ -36,7 +36,7 @@ width: 100%;
 const StyledTreeSection = styled.div`
 margin: 1%;
 border-radius: 10px;
-
+display: flex;
 // flex-basis: 90%;
 // height: 100%;
 width: 100%;
