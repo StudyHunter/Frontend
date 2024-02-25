@@ -1,5 +1,5 @@
 import UpperBox from '../components/MainPages/UpperBox';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ImgPut from '../components/MakeRoomPages/ImgPut';
 // import Info from '../Components/info';
@@ -17,17 +17,22 @@ import ch5 from '../img/checked5.png'
 import ch6 from '../img/checked6.png'
 import Info from '../components/MainPages/Info';
 import MakeRoomComponent from '../components/MainPages/MakeRoomComponent';
+import RoomThumbnail from '../components/MakeRoomPages/RoomThumbnail';
 
 // 방만들기 페이지세요 
 
+
 const MakeRoom = () => {
 
-  const [userImg, setUserImg] = useState(tempImg);
+
+
+  // const [userImg, setUserImg] = useState(tempImg);
   const [roomTitle, setRoomTitle] = useState('');
   const [member, setMember] = useState('2');
-  
+  const [thumb, setThumb] = useState('1')
+
   // 태그는 받아오기
-  const initialTags = ['프론트엔드', '백엔드', '풀스택']; // Add as many tags as needed
+  const initialTags = ['프론트엔드', '백엔드', '앱개발', '데이터사이언스', '데브옵스', '게임', '시스템']; // Add as many tags as needed
   const [tags, setTags] = useState(initialTags.reduce((acc, tag) => ({ ...acc, [tag]: false }), {}));
 
   const onCheckBoxChecked = (tag) => {
@@ -48,6 +53,7 @@ const MakeRoom = () => {
     setMember(e.target.id);
   }
 
+  
   return (
     <div>
     <UpperBox/>
@@ -57,7 +63,9 @@ const MakeRoom = () => {
       <StyledInputRoom>
       
         <FirstSection>
-        <ImgPut userImg={userImg} setUserImg={setUserImg}></ImgPut>
+          방 썸네일
+          <RoomThumbnail thumb={thumb} setThumb={setThumb}/>
+        {/* <ImgPut userImg={userImg} setUserImg={setUserImg}></ImgPut> */}
           {/* <StyledImgBox>
             이미지 추가
           </StyledImgBox>
@@ -112,16 +120,16 @@ const MakeRoom = () => {
               {tags[tag] && <StyledTagBoxFont style={{ display: 'none' }}>{tag}</StyledTagBoxFont>}
             {!tags[tag] && tag}
             </StyledCheckBoxLabel>
-              {tag}</StyledTest>
+              </StyledTest>
               ))}
 
-              <div>
+              {/* <div>
                 {Object.entries(tags).map(([tag, isChecked]) => (
                   <p key={tag}>
                     {tag}: {isChecked.toString()}
                   </p>
                 ))}
-              </div>
+              </div> */}
               </StyledCheckBox>
           </SecondChildSection>
           {/* <StyledRoomName>
@@ -146,10 +154,11 @@ margin: 0 auto;
 `
 
 const StyledTest = styled.div`
-padding: 10px;`
+padding: 10px;
+display: flex`
 
 const StyledCheckBox = styled.div`
-display: flex;
+display: block;
 `
 
 const StyledCheckBoxInput = styled.input`
@@ -161,7 +170,7 @@ display: none;
   height: 30px;
   //font-size: 25px;
   text-align: center;
-  background-color: orange;
+  background-color: rgba(255, 138, 0);
 
 }
 `
@@ -179,12 +188,13 @@ line-height: 30px;
 justify-content: center;
 
 
+
 `
 
 const StyledTitleInput = styled.input`
 appearance: none;
 border-width: 0 0 3px;
-border-color: orange;
+border-color: rgba(255, 138, 0);
 outline: none;
 height: 30px;
 width: 90%;
@@ -262,18 +272,18 @@ margin: 0 5% 5% 5% ;
 `
 
 const FirstSection = styled.div`
-flex-basis: 25%;
+flex-basis: 40%;
 width: 100%;
 height: 100%;
 background-color: #FFF0E3;
 margin: 0 10px;
 border-radius: 10px;
-padding:
+padding: 2%;
 `
 const SecondSection = styled.div`
 display: flex;
 flex-direction: column;
-flex-basis: 45%;
+flex-basis: 20%;
 width: 100%;
 height: 100%;
 background-color: white;
