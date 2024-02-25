@@ -40,6 +40,6 @@ display: flex;
 // flex-basis: 90%;
 // height: 100%;
 width: 100%;
-background-color: gray;
+// background-color: gray;
 `
 export default TreeSection
