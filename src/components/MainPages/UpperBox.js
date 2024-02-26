@@ -13,7 +13,7 @@ const StyledImage = styled.div`
   margin: 0 30px 0 30px;
   width: 60px;
   height: 50px;
-  background-image: url(${process.env.PUBLIC_URL + '/img/logo.png'});
+  background-image: url(${process.env.PUBLIC_URL + '/img/logo.svg'});
   background-size: contain;
 `;
 
@@ -29,38 +29,34 @@ const MyPageLink = styled(Link)`
   text-decoration: none;
 `;
 
-
 const StyledMenu = styled.button`
-appearance: none;
-border: transparent;
-background-color: transparent;
-cursor: pointer;
-padding: 10px 50px;
-color: #FF7A00;
-display: inline;
-font-family: 'Inter', sans-serif;
+  appearance: none;
+  border: transparent;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 10px 50px;
+  color: #ff7a00;
+  display: inline;
+  font-family: 'Inter', sans-serif;
 
-&:hover{
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-bottom-color: #FF7A00;
-  // border-bottom: 5px solid #FF7A00;
+  &:hover {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #ff7a00;
+    // border-bottom: 5px solid #FF7A00;
 
-  // background-color: #FF7A00;
-  // color: white;
-  // border-radius: 5px;
-}
-`
+    // background-color: #FF7A00;
+    // color: white;
+    // border-radius: 5px;
+  }
+`;
 const StyledText = styled.div`
-// position: absolute;
-// width: 488px;
-// height: 19px;
-// left: 262px;
-// top: 71px;
-
-
-`
-
+  // position: absolute;
+  // width: 488px;
+  // height: 19px;
+  // left: 262px;
+  // top: 71px;
+`;
 
 const UpperBox = () => {
   const MemoizedUpperBox = useMemo(() => {
@@ -68,8 +64,12 @@ const UpperBox = () => {
       <Layout>
         <StyledImage />
         <StyledText>
-          <StyledMenu><IntroduceLink to="/Introduce">큐피 소개</IntroduceLink></StyledMenu>
-          <StyledMenu><MyPageLink to="/MyPage">마이페이지</MyPageLink> </StyledMenu>
+          <StyledMenu>
+            <IntroduceLink to="/Introduce">큐피 소개</IntroduceLink>
+          </StyledMenu>
+          <StyledMenu>
+            <MyPageLink to="/MyPage">마이페이지</MyPageLink>{' '}
+          </StyledMenu>
         </StyledText>
       </Layout>
     );
