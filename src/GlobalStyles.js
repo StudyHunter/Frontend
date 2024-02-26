@@ -7,11 +7,6 @@ const GlobalStyles = createGlobalStyle`
         padding : 0;
         font-family: 'Gowun Dodum', sans-serif;
     }
-    //배경화면 이미지
-    body{
-        background-size : cover;
-        
-    }
     //버튼
     button{
         cursor : pointer;

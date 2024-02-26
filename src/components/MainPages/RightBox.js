@@ -9,7 +9,6 @@ const Layout = styled.div`
   flex-direction: column;
   flex-basis: 30%;
   flex-wrap: nowrap;
-  flex-direction: column;
 `;
 
 const RightBox = () => {
