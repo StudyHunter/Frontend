@@ -11,10 +11,16 @@ const Layout = styled.div`
 `;
 const StyledImage = styled.div`
   margin: 0 30px 0 30px;
-  width: 60px;
-  height: 50px;
+  width: 100%;
+  height: 100%;
   background-image: url(${process.env.PUBLIC_URL + '/img/logo.svg'});
   background-size: contain;
+`;
+
+const StyledImgBox = styled.div`
+  width: 120px;
+  height: 100px;
+  padding: 20px;
 `;
 
 const IntroduceLink = styled(Link)`
@@ -38,6 +44,9 @@ const StyledMenu = styled.button`
   color: #ff7a00;
   display: inline;
   font-family: 'Inter', sans-serif;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-bottom-color: transparent;
 
   &:hover {
     border-bottom-width: 2px;
@@ -56,13 +65,16 @@ const StyledText = styled.div`
   // height: 19px;
   // left: 262px;
   // top: 71px;
+  padding: 0 100px;
 `;
 
 const UpperBox = () => {
   const MemoizedUpperBox = useMemo(() => {
     return (
       <Layout>
-        <StyledImage />
+        <StyledImgBox>
+          <StyledImage />
+        </StyledImgBox>
         <StyledText>
           <StyledMenu>
             <IntroduceLink to="/Introduce">큐피 소개</IntroduceLink>
