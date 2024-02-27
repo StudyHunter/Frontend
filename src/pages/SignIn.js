@@ -12,14 +12,12 @@ const SignUp = () => {
     게임: false,
     시스템: false,
   };
-  const [userId, setUserId] = useState('');
+  const [userEmail, setUserEmail] = useState('');
   const [password, setPassword] = useState('');
   const [userName, setUserName] = useState('');
   const [categoryList, setCategoryList] = useState(tempCategoryList);
-  const [isCheckedId, setIscheckedId] = useState(false);
-  const [isCheckedName, setIsCheckedName] = useState(false);
-  const [nameMessage, setNameMessage] = useState(' ');
-  const [idMessage, setIdMessage] = useState(' ');
+  const [isCheckedEmail, setIscheckedEmail] = useState(false);
+  const [idMessage, setEmailMessage] = useState(' ');
 
   const navigate = useNavigate();
   const handleCategoryClick = (e) => {
@@ -49,6 +47,7 @@ const SignUp = () => {
     }
     return result;
   }
+  const checkForm = (setIscheckedEmail, password, userName) => {};
   const handleSubmit = async (e) => {
     //유효성 검사
     //checkForm();
@@ -67,37 +66,27 @@ const SignUp = () => {
 
   //id 확인 GET 요청
   const checkID = async () => {
+    var re =
+      /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
+    if (!re.test(userEmail)) {
+      alert('이메일 형식이 아닙니다!');
+      setUserEmail('');
+      return;
+    }
     try {
       // const response = await axios.get(
       //   `https://your-server.com/check-id/${id}`
       // );
       //response.data.isDuplicated
       if (false) {
-        setIscheckedId(true);
-        setIdMessage('이미 사용 중인 ID 입니다.');
+        setIscheckedEmail(false);
+        setEmailMessage('이미 사용 중인 이메일입니다.');
       } else {
-        setIdMessage('사용 가능한 ID 입니다.');
+        setIscheckedEmail(true);
+        setEmailMessage('사용 가능한 이메일입니다.');
       }
     } catch (error) {
       console.error('ID 중복 확인 중 오류 발생:', error);
-    }
-  };
-
-  //닉네임 확인 GET 요청
-  const checkName = async () => {
-    try {
-      // const response = await axios.get(
-      //   `https://your-server.com/check-id/${id}`
-      // );
-      //response.data.isDuplicated
-      if (false) {
-        setIsCheckedName(true);
-        setNameMessage('이미 사용 중인 닉네임 입니다.');
-      } else {
-        setNameMessage('사용 가능한 닉네임 입니다.');
-      }
-    } catch (error) {
-      console.error('닉네임 중복 확인 중 오류 발생:', error);
     }
   };
 
@@ -110,28 +99,18 @@ const SignUp = () => {
         <SignUpBox>
           <SignUpText>SIGN UP</SignUpText>
           <Box>
-            <TitleText>닉네임</TitleText>
+            <TitleText>이메일</TitleText>
             <InputLayout>
               <Input
                 type="text"
-                value={userName}
-                onChange={(e) => setUserName(e.target.value)}
-              />
-              <ValidationBox onClick={checkName}>확인</ValidationBox>
-            </InputLayout>
-            <CheckText>{nameMessage}</CheckText>
-          </Box>
-          <Box>
-            <TitleText>아이디</TitleText>
-            <InputLayout>
-              <Input
-                type="text"
-                value={userId}
-                onChange={(e) => setUserId(e.target.value)}
+                value={userEmail}
+                onChange={(e) => setUserEmail(e.target.value)}
               />
               <ValidationBox onClick={checkID}>확인</ValidationBox>
             </InputLayout>
-            <CheckText>{idMessage}</CheckText>
+            <EmailCheckText isCheckedEmail={isCheckedEmail}>
+              {idMessage}
+            </EmailCheckText>
           </Box>
           <Box>
             <TitleText>비밀번호</TitleText>
@@ -143,8 +122,20 @@ const SignUp = () => {
               />
             </InputLayout>
             <CheckText>
-              {password.length < 6 ? '6자 이상 입력해주세요' : ''}
+              {password.length === 0 || password.length > 6
+                ? ''
+                : '6자 이상 입력해주세요'}
             </CheckText>
+          </Box>
+          <Box>
+            <TitleText>닉네임</TitleText>
+            <InputLayout>
+              <Input
+                type="text"
+                value={userName}
+                onChange={(e) => setUserName(e.target.value)}
+              />
+            </InputLayout>
           </Box>
           <CategoryBox>{makeCategoryBox(categoryList)}</CategoryBox>
           <LinkButton basis="10" onClick={handleSubmit}>
@@ -255,7 +246,12 @@ const ValidationBox = styled.button`
 const CheckText = styled.div`
   flex-basis: 10%;
   font-size: 15px;
+  color: red;
 `;
+const EmailCheckText = styled(CheckText)`
+  color: ${(props) => (props.isCheckedEmail ? 'blue' : 'red')};
+`;
+
 const TitleText = styled.div`
   flex-basis: 10%;
   font-size: 20px;
