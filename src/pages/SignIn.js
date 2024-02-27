@@ -47,7 +47,7 @@ const SignUp = () => {
     }
     return result;
   }
-  const checkForm = (setIscheckedEmail, password, userName) => {};
+  // const checkForm = (setIscheckedEmail, password, userName) => {};
   const handleSubmit = async (e) => {
     //유효성 검사
     //checkForm();
