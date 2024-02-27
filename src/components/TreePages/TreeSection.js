@@ -1,6 +1,7 @@
 import Info from '../MainPages/Info'
 import styled from 'styled-components';
 import TreeThings from './TreeThings';
+import BkTree from '../../img/tree_things/tree.png';
 
 const TreeSection = () => {
   return (
@@ -22,6 +23,7 @@ display: flex;
 width: 100%;
 height: 100%;
 
+
 `
 
 const StyledInfoSection = styled.div`
@@ -34,10 +36,10 @@ width: 100%;
 const StyledTreeSection = styled.div`
 margin: 1%;
 border-radius: 10px;
-
+display: flex;
 // flex-basis: 90%;
 // height: 100%;
 width: 100%;
-background-color: gray;
+// background-color: gray;
 `
 export default TreeSection

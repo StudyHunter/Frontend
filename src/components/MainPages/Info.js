@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 //DummyData
 import InfoDummyData from '../../DummyData/InfoDummyData';
+
 const Info = () => {
   return (
     <InfoBox>

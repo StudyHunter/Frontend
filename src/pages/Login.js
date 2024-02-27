@@ -114,6 +114,13 @@ const PasswordInput = styled.input`
   border: 3px solid ${(props) => props.theme.basic};
   border-radius: 5px;
 `;
+
+const StyledImgBox = styled.div`
+  width: 200px;
+  height: 180px;
+  padding: 20px;
+`;
+
 const StyledImage = styled.div`
   width: 200px;
   height: 160px;
