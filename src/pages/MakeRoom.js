@@ -18,6 +18,7 @@ import ch6 from '../img/checked6.png'
 import Info from '../components/MainPages/Info';
 import MakeRoomComponent from '../components/MainPages/MakeRoomComponent';
 import RoomThumbnail from '../components/MakeRoomPages/RoomThumbnail';
+import SubmitMakeRoom from '../components/MakeRoomPages/SubmitMakeRoom';
 
 // 방만들기 페이지세요 
 
@@ -35,11 +36,19 @@ const MakeRoom = () => {
   const initialTags = ['프론트엔드', '백엔드', '앱개발', '데이터사이언스', '데브옵스', '게임', '시스템']; // Add as many tags as needed
   const [tags, setTags] = useState(initialTags.reduce((acc, tag) => ({ ...acc, [tag]: false }), {}));
 
+  const [finalTags, setFinalTags] = useState([])
+
   const onCheckBoxChecked = (tag) => {
     setTags((prevTags) => ({
       ...prevTags,
       [tag]: !prevTags[tag], // Toggle the value
     }));
+ 
+    setFinalTags((finalTag => ({
+      ...finalTag,
+
+    })))
+
   };
 
 
@@ -140,6 +149,7 @@ const MakeRoom = () => {
           <Info/>
           {/* <Info /> */}
           <MakeRoomComponent/>
+          <SubmitMakeRoom title={roomTitle} thumbnail={thumb} member={member} tags={tags} />
         </ThirdSection>
         </StyledInputRoom>
 
