@@ -35,7 +35,6 @@ const MyPageLink = styled(Link)`
   text-decoration: none;
 `;
 
-
 const StyledMenu = styled.button`
 appearance: none;
 border: transparent;
@@ -49,17 +48,17 @@ border-bottom-width: 2px;
 border-bottom-style: solid;
 border-bottom-color: transparent;
 
-&:hover{
-  border-bottom-width: 2px;
-  border-bottom-style: solid;
-  border-bottom-color: #FF7A00;
-  // border-bottom: 5px solid #FF7A00;
+  &:hover {
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    border-bottom-color: #ff7a00;
+    // border-bottom: 5px solid #FF7A00;
 
-  // background-color: #FF7A00;
-  // color: white;
-  // border-radius: 5px;
-}
-`
+    // background-color: #FF7A00;
+    // color: white;
+    // border-radius: 5px;
+  }
+`;
 const StyledText = styled.div`
 // position: absolute;
 // width: 488px;
@@ -80,8 +79,12 @@ const UpperBox = () => {
           <StyledImage />
         </StyledImgBox>
         <StyledText>
-          <StyledMenu><IntroduceLink to="/Introduce">큐피 소개</IntroduceLink></StyledMenu>
-          <StyledMenu><MyPageLink to="/MyPage">마이페이지</MyPageLink> </StyledMenu>
+          <StyledMenu>
+            <IntroduceLink to="/Introduce">큐피 소개</IntroduceLink>
+          </StyledMenu>
+          <StyledMenu>
+            <MyPageLink to="/MyPage">마이페이지</MyPageLink>{' '}
+          </StyledMenu>
         </StyledText>
       </Layout>
     );

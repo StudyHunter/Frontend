@@ -6,7 +6,7 @@ import LowerCenterBox from '../components/InnerRoomPages/LowerCenterBox';
 import LowerRightBox from '../components/InnerRoomPages/LowerRightBox';
 const InnerRoom = () => {
   const location = useLocation();
-  console.log(" ", location);
+  console.log(' ', location);
   const roomData = location.state;
 
   return (
@@ -59,7 +59,7 @@ const InnerRoomLowerBox = styled.div`
 const StyledImage = styled.div`
   width: 60px;
   height: 50px;
-  background-image: url(${process.env.PUBLIC_URL + '/img/logo.png'});
+  background-image: url(${process.env.PUBLIC_URL + '/img/logo1.png'});
   background-size: cover;
 `;
 const TextBox = styled.div`
