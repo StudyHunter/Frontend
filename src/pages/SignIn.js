@@ -2,6 +2,7 @@ import LinkButton from '../components/Button/LinkButton';
 import styled from 'styled-components';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
+import axios from 'axios';
 const SignUp = () => {
   const tempCategoryList = {
     프론트엔드: false,
@@ -12,11 +13,22 @@ const SignUp = () => {
     게임: false,
     시스템: false,
   };
+  const tagOption = {
+    프론트엔드: 'FRONTEND',
+    백엔드: 'BACKEND',
+    앱개발: 'APP_DEVELOP',
+    데이터사이언스: 'DATA',
+    데브옵스: 'DEVOPS',
+    게임: 'GAME',
+    시스템: 'SYSTEM',
+  };
+
   const [userEmail, setUserEmail] = useState('');
   const [password, setPassword] = useState('');
   const [userName, setUserName] = useState('');
+  const [passwordCheck, setpasswordCheck] = useState('');
   const [categoryList, setCategoryList] = useState(tempCategoryList);
-  const [isCheckedEmail, setIscheckedEmail] = useState(false);
+  const [isCheckedEmail, setIsCheckedEmail] = useState(false);
   const [idMessage, setEmailMessage] = useState(' ');
 
   const navigate = useNavigate();
@@ -47,20 +59,29 @@ const SignUp = () => {
     }
     return result;
   }
-  // const checkForm = (setIscheckedEmail, password, userName) => {};
+
+  function filterTag(categoryList) {
+    const result = [];
+    for (const [key, value] of Object.entries(categoryList)) {
+      if (value) {
+        result.push(tagOption[key]);
+      }
+    }
+    return result;
+  }
+  const checkForm = (setIsCheckedEmail, password, userName) => {};
   const handleSubmit = async (e) => {
     //유효성 검사
     //checkForm();
-
     //server에 전송
     e.preventDefault();
-    //밑에 말고 get 요청
-    // const res = await axios.post('http://localhost:3000/login', {
-    //   username,
-    //   password,
-    // });
-    // const token = res.data.token;
-    // localStorage.setItem('token', token);
+    const res = await axios.post('http://49.50.175.93:8080/user/register', {
+      email: userEmail,
+      username: userName,
+      password: password,
+      passwordCheck: password,
+      tags: filterTag(categoryList),
+    });
     navigate('/');
   };
 
@@ -74,19 +95,20 @@ const SignUp = () => {
       return;
     }
     try {
-      // const response = await axios.get(
-      //   `https://your-server.com/check-id/${id}`
-      // );
-      //response.data.isDuplicated
-      if (false) {
-        setIscheckedEmail(false);
-        setEmailMessage('이미 사용 중인 이메일입니다.');
-      } else {
-        setIscheckedEmail(true);
+      const response = await axios.get(
+        `http://49.50.175.93:8080/user/checkId`,
+        {
+          params: { email: userEmail },
+        }
+      );
+      if (response.status === 200) {
+        setIsCheckedEmail(true);
         setEmailMessage('사용 가능한 이메일입니다.');
       }
     } catch (error) {
-      console.error('ID 중복 확인 중 오류 발생:', error);
+      console.log(error);
+      setIsCheckedEmail(false);
+      setEmailMessage('이미 사용 중인 이메일입니다.');
     }
   };
 

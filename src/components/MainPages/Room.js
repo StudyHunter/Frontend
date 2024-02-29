@@ -36,7 +36,7 @@ const Room = ({ categoryList }) => {
             <LowerRoomBox>
               <BoardTags>
                 {roomData.tags.map((tag, idx) => {
-                  return <Tag key={idx}>{'#' + tag}</Tag>;
+                  return <Tag key={idx}>{tag}</Tag>;
                 })}
               </BoardTags>
               <UserCount>
@@ -119,12 +119,11 @@ export default Room;
 const RoomBox = styled.div`
   overflow-y: auto;
   border-radius: 10px;
-  margin: 10px;
+  //margin: 10px;
   display: flex;
-  flex-basis: 70%;
+  flex-basis: 75%;
   justify-contenet: center;
   align-items: center;
-  background-color: rgba(217, 217, 217, 0.6); //#d9d9d9
 `;
 
 const StyledSwiperSlide = styled(SwiperSlide)`
@@ -132,7 +131,6 @@ const StyledSwiperSlide = styled(SwiperSlide)`
   display: flex;
   align-itmes: start;
   flex-wrap: wrap;
-  background-color: rgba(217, 217, 217, 0.6); //#d9d9d9
 `;
 const Board = styled(Link)`
   display: flex;
@@ -140,6 +138,7 @@ const Board = styled(Link)`
   height: 20%;
   //height: 12%;
   margin: 10px;
+  border: 1px solid ${(props) => props.theme.whiteGray};
   border-radius: 10px;
   justify-contenet: center;
   background-color: #ffffff;
@@ -147,13 +146,12 @@ const Board = styled(Link)`
   text-decoration: none;
 `;
 const DefultBoard = styled(Board)`
-  background-color: rgba(128, 128, 128, 0.7);
+  background-color: ${(props) => props.theme.whiteGray};
 `;
 
 const BoardImage = styled.div`
   border-radius: 10px;
   flex-basis: 25%;
-  //flex-basis: 12%;
   margin: 10px;
   background-image: url(${(props) =>
     process.env.PUBLIC_URL + props.$thumbnail});
@@ -162,10 +160,10 @@ const BoardImage = styled.div`
 const BoardTitle = styled.div`
   display: flex;
   flex-basis: 80%;
+  font-size: 20px;
+  font-weight: 900;
   border-radius: 10px;
-  margin: 10px;
   padding-left: 20px;
-  background-color: rgba(217, 217, 217, 0.6); //#d9d9d9
   align-items: center;
   justify-content: flex-start;
 `;
@@ -174,8 +172,7 @@ const BoardTags = styled.div`
   justify-content: flex-start;
   align-itmes: center;
   flex-basis: 80%;
-  color: #0a0a23;
-  font-size: 15px;
+  font-size: 12px;
 `;
 const UserCount = styled.div`
   display: flex;
@@ -183,16 +180,19 @@ const UserCount = styled.div`
   margin: 5px;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  background-color: rgba(217, 217, 217, 0.6); //#d9d9d9
+  border: 1px solid ${(props) => props.theme.whiteGray};
+  border-radius: 5px;
+  font-size: 18px;
 `;
 const Tag = styled.div`
   width: auto;
   padding: 12px;
   margin: 3px;
-  border-radius: 8px;
+  border-radius: 5px;
   align-items: center;
   justify-content: center;
+  background-color: ${(props) => props.theme.basic};
+  color: #ffffff;
 `;
 const LowerRoomBox = styled.div`
   border-radius: 10px;
