@@ -1,3 +1,4 @@
+import styled from 'styled-components';
 import React, { useState, useEffect } from 'react';
 import {
   TextField,
@@ -57,8 +58,8 @@ const ChatComponent = () => {
   };
 
   return (
-    <div>
-      <List>
+    <Layout>
+      <UpperBox>
         {messages.map((msg, index) => (
           <ListItem key={index}>
             <ListItemAvatar>
@@ -72,9 +73,9 @@ const ChatComponent = () => {
             />
           </ListItem>
         ))}
-      </List>
+      </UpperBox>
 
-      <div style={{ display: 'flex', alignItems: 'center' }}>
+      <LowerBox>
         <TextField
           placeholder="Enter your nickname"
           value={nickname}
@@ -90,9 +91,26 @@ const ChatComponent = () => {
         <IconButton onClick={sendMessage} disabled={!message.trim()}>
           send
         </IconButton>
-      </div>
-    </div>
+      </LowerBox>
+    </Layout>
   );
 };
 
 export default ChatComponent;
+const Layout = styled.div`
+  height: 100%;
+  margin: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid ${(props) => props.theme.whiteGray};
+`;
+const LowerBox = styled.div`
+  display: flex;
+  flex-basis: 10%;
+  align-items: center;
+`;
+const UpperBox = styled(List)`
+  flex-basis: 90%;
+`;

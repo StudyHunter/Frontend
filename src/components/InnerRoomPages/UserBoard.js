@@ -24,20 +24,19 @@ const Board = styled.div`
   flex-basis: 30%;
   justify-content: center;
   align-items: center;
-  background-color: rgba(255, 160, 0, 0.2);
+  border: 1px solid ${(props) => props.theme.whiteGray};
 `;
 
 const UserImage = styled.div`
   display: flex;
-  flex-basis: 35%;
+  flex-basis: 40%;
   width: 60%;
-  border-radius: 70%;
+  border-radius: 10px;
   margin: 20px;
   background-image: url(${(props) => process.env.PUBLIC_URL + props.$user_img});
   background-size: cover;
 `;
 const UserName = styled.div`
-  margin: 10px;
   font-size: 22px;
   font-weight: 700;
 `;
@@ -55,6 +54,6 @@ const UserTag = styled.div`
   color: #ffffff;
   font-size: 10px;
   font-weight: 700;
-  border: 2px solid rgba(255, 122, 0, 1);
-  color: #ff7a00;
+  background-color: ${(props) => props.theme.basic};
+  color: #ffffff;
 `;
