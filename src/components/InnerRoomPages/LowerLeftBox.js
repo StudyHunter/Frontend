@@ -71,14 +71,12 @@ const TokenBox = styled.div`
   flex-basis: 20%;
   justify-content: center;
   align-items: center;
-  background-color: rgba(128, 128, 128, 0.2); //#808080
-
+  border: 1px solid ${(props) => props.theme.whiteGray};
   h2 {
-    font-size: 30px;
-    color: #ff7a00;
+    font-size: 25px;
   }
   h1 {
-    font-size: 35px;
+    font-size: 30px;
   }
 `;
 const TimeBox = styled.div`
@@ -88,10 +86,9 @@ const TimeBox = styled.div`
   flex-basis: 20%;
   justify-content: center;
   align-items: center;
-  background-color: rgba(128, 128, 128, 0.2); //#808080
+  border: 1px solid ${(props) => props.theme.whiteGray};
   font-size: 30px;
   font-weight: 700;
-  color: #ff7a00;
 `;
 const ControlTimeButton = styled.button`
   border-radius: 10px;

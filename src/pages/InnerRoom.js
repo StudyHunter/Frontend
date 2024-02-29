@@ -12,7 +12,9 @@ const InnerRoom = () => {
   return (
     <Layout>
       <UpperLayout>
-        <StyledImage />
+        <StyledImgBox>
+          <StyledImage />
+        </StyledImgBox>
         <TextBox>
           <TextBoxFont>
             최대36자까지가능최대36자까지가능최대36자까지가능최대36까지가능
@@ -38,9 +40,8 @@ const Layout = styled.div`
   flex-basis: 100%;
 `;
 const UpperLayout = styled.div`
-  margin: 0 30px 0 30px;
   display: flex;
-  flex-basis: 10%;
+  flex-basis: 15%;
   align-items: center;
 `;
 const LowerLayout = styled.div`
@@ -49,7 +50,7 @@ const LowerLayout = styled.div`
   display: flex;
   flex-basis: 90%;
   flex-direction: column;
-  background-color: rgba(224, 224, 224, 0.6); //#E0E0E0
+  border: 1px solid ${(props) => props.theme.whiteGray};
 `;
 const InnerRoomLowerBox = styled.div`
   display: flex;
@@ -57,10 +58,17 @@ const InnerRoomLowerBox = styled.div`
 `;
 
 const StyledImage = styled.div`
-  width: 60px;
-  height: 50px;
-  background-image: url(${process.env.PUBLIC_URL + '/img/logo1.png'});
+  margin: 0 30px 0 30px;
+  flex-basis: 10%;
+  width: 100%;
+  height: 100%;
+  background-image: url(${process.env.PUBLIC_URL + '/img/logo.svg'});
   background-size: cover;
+`;
+const StyledImgBox = styled.div`
+  width: 120px;
+  height: 100px;
+  padding: 20px;
 `;
 const TextBox = styled.div`
   flex-basis: 95%;
@@ -73,11 +81,10 @@ const TextBox = styled.div`
   display: flex;
   text-overflow: hidden;
   align-items: center;
-  justify-content: center;
+  margin-left: 30px;
 `;
 
 const TextBoxFont = styled.div`
-  color: #ff7a00;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 700;
 `;
