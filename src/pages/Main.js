@@ -48,8 +48,8 @@ const Main = () => {
     <MainBox>
       <UpperBox />
       <MediumBox>
-        <MotivationText />
         <Category categoryList={categoryList} onClick={handleCategoryClick} />
+        <MotivationText />
       </MediumBox>
       <LowerBox>
         <Room categoryList={categoryList} />

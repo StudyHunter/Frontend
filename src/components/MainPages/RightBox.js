@@ -5,10 +5,14 @@ import styled from 'styled-components';
 import { useMemo } from 'react';
 
 const Layout = styled.div`
+  margin: 10px;
   display: flex;
   flex-direction: column;
-  flex-basis: 30%;
-  flex-wrap: nowrap;
+  flex-basis: 25%;
+`;
+
+const VoidBox = styled.div`
+  flex-basis: 40%;
 `;
 
 const RightBox = () => {
@@ -16,6 +20,7 @@ const RightBox = () => {
     return (
       <Layout>
         <Info />
+        <VoidBox />
         <Tree />
         <MakeRoomComponent />
       </Layout>

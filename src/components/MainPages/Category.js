@@ -21,24 +21,19 @@ export default Category;
 const CategoryContent = styled.button`
   padding: 15px;
   margin: 3px;
-  border-radius: 8px;
-  color: #ffffff;
+  border: 1px solid ${(props) => props.theme.whiteGray};
+  border-radius: 5px;
   font-size: 12px;
   font-weight: 500;
   ${(props) => {
     if (!props.value) {
       return `
-        background-color: rgba(10, 10, 35, 0.8);
-        // &:hover {
-        //   background-color: rgba(125, 125, 160, 0.8);
-        // }
+        background-color: #ffffff;
         `;
     } else {
       return `
-        background-color: rgba(125, 125, 160, 0.8);
-        // &:hover {
-        //   background-color: rgba(10, 10, 35, 0.8);
-        // }
+      background-color : ${props.theme.whiteGray};
+      border: 1px solid ${props.theme.whiteGray};
         `;
     }
   }}
@@ -49,7 +44,5 @@ const CategoryBox = styled.div`
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  flex-basis: 50%;
-  justify-contenet: center;
-  background-color: rgba(217, 217, 217, 0.6); //#d9d9d9
+  flex-basis: 40%;
 `;
